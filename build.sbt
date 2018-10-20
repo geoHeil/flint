@@ -52,9 +52,9 @@ lazy val formattingPreferences = {
 lazy val compilationSettings = scalariformSettings ++ Seq(
   version := "0.4.0-SNAPSHOT",
   organization := "com.twosigma",
-  scalaVersion := "2.11.8",
+  scalaVersion := "2.11.12",
   assemblyOption in assembly := (assemblyOption in assembly).value.copy(includeScala = false),
-  javacOptions ++= Seq("-source", "1.7", "-target", "1.7"),
+  javacOptions ++= Seq("-source", "1.8", "-target", "1.8"),
   compileOrder in Compile := CompileOrder.JavaThenScala,
   scalacOptions ++= Seq(
     "-deprecation",
@@ -83,7 +83,7 @@ lazy val versions = new {
   val commons_math = "3.5"
   val joda_time = "2.9.4"
   val httpclient = "4.3.2" // Note that newer versions need to be configured
-  val spark = sys.props.getOrElse("spark.version", default = "2.2.0")
+  val spark = sys.props.getOrElse("spark.version", default = "2.2.2")
   val scalatest = "2.2.4"
   val scalacheck = "1.12.6"
   val grizzled_slf4j = "1.3.0"
